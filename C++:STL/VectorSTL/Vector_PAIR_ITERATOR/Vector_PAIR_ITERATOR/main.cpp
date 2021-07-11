@@ -7,6 +7,8 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
+#include <utility>
 
 using namespace std;
 int main(int argc, const char * argv[]) {
@@ -62,5 +64,31 @@ int main(int argc, const char * argv[]) {
     auto find_it = find(vec2.begin(),vec2.end(),5);
     cout<<"\nPosition at which 5 is found: "<<find_it-vec2.begin()<<endl;
     cout<<endl;
+    
+    
+    vector<pair<int,int>> marks;
+    pair<int, int> p;
+    
+    p.first = 0;
+    p.second =1;
+    cout<<p.first<<endl;
+    
+    marks.push_back(p);
+    cout<<marks[0].first;
+    marks.push_back(make_pair(5,5));
+    cout<<"\n"<<marks[1].first<<endl;
+    int x,y;
+    tie(x, y) = marks[0];
+    cout<<"Tie X: "<<x<<" Y: "<<y<<endl;
+    
+    /*for (int i =0 ;i<5;i++) {
+        marks[i].push_back(make_pair(i+10, "Kewin"));
+    }
+    int i = 0;
+    //for(auto e: marks) {
+        
+        cout<<"Mark: "<<marks[0].first<<"Name: "<<marks[0].second<<endl;
+        i++;
+    //}*/
     return 0;
 }
