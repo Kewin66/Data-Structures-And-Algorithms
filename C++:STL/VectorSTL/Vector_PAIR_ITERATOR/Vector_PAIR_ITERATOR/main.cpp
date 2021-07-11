@@ -7,8 +7,6 @@
 
 #include <iostream>
 #include <vector>
-#include <string>
-#include <utility>
 
 using namespace std;
 int main(int argc, const char * argv[]) {
@@ -71,16 +69,27 @@ int main(int argc, const char * argv[]) {
     
     p.first = 0;
     p.second =1;
-    cout<<p.first<<endl;
     
     marks.push_back(p);
-    cout<<marks[0].first;
     marks.push_back(make_pair(5,5));
     cout<<"\n"<<marks[1].first<<endl;
     int x,y;
     tie(x, y) = marks[0];
     cout<<"Tie X: "<<x<<" Y: "<<y<<endl;
     
+    vector<pair<string, pair<int, string>>>m;
+    
+    m.push_back(make_pair("Kewin",make_pair(6,"Srinath")));
+    m.push_back(make_pair("Rajni", make_pair(12,"SuperStar")));
+    
+   for (auto e: m) {
+        string a;
+        pair <int, string> b;
+       cout<<"e.first: "<<e.first<<endl;
+        tie(a, b) = e;
+        cout<<"Key: "<< a << " Value (int)- First: "<<b.first<<" Second (String): "<<b.second<<endl;
+        
+    }
     /*for (int i =0 ;i<5;i++) {
         marks[i].push_back(make_pair(i+10, "Kewin"));
     }
