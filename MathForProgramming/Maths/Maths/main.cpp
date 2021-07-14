@@ -9,7 +9,9 @@
  
  1. Find number of digits using log10
  2. Find number of trailing zeros in factorial of a number. (Fails my method)
- 
+ 3. GCD, Product of two numbers.
+ 4. Find isPrime()
+ 5. Prime factors of N.
  
  */
 #include <iostream>
