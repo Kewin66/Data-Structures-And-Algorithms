@@ -11,8 +11,23 @@
 #define MAX 100
 using namespace std;
 
-void mergeSort(int &arr, int low, int high)
+int[] mergeArray(int arr[MAX], int arr[MAX], int result[MAX])
 {
+    cout<<"Stupid"<<endl;
+    return arr;
+    
+    
+}
+void mergeSort(int arr[MAX], int low, int high)
+{
+    int mid = low + (high-low)/2;
+    int result[MAX];
+    if(low<=high){
+        
+        mergeSort(arr,0, mid-1);
+        mergeSort(arr,mid+1, high);
+    }
+    mergeArray(arr, arr, result);
     
 }
 int main(int argc, const char * argv[]) {
