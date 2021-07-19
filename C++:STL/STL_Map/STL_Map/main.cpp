@@ -36,7 +36,7 @@ void sortMap(map<char, int> &mp, unordered_map<char, int> &up){
     mp.empty();
     
     for(auto itr:cmp){
-        up[itr.first] = itr.second;
+        up.insert({itr.first, itr.second});
     }
 }
 int main(int argc, const char * argv[]) {
@@ -64,7 +64,10 @@ int main(int argc, const char * argv[]) {
     
     for(auto c:inserted_order){
         
+        if(mp.find(c)!=mp.end()){
         cout<<"Char: "<< c<<" Frequency:"<<mp[c]<<endl;
+            mp.erase(c);
+        }
     }
     
     
