@@ -5,6 +5,18 @@
 //  Created by Kewin Srinath on 7/19/21.
 //
 
+
+/*
+    Track the frequency of characters in given string and display their respective
+    frequency in order same as input string.
+    
+    Also, sort the map values by frequency
+ 
+    NOTE:
+      Sort the vector in descending order and store the output in Unordered_map to
+      display the frequency in ascending order. (Unordered_map hashes the key-value in
+      order same as Stack.)
+ */
 #include <iostream>
 #include <map>
 #include <unordered_map>
@@ -69,8 +81,6 @@ int main(int argc, const char * argv[]) {
             mp.erase(c);
         }
     }
-    
-    
     
     return 0;
 }
