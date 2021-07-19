@@ -17,7 +17,7 @@ bool comp(pair<char, int> &t1, pair<char,int> &t2)
     
 }
 
-void sortMap(map<char, int> &mp){
+void sortMap(map<char, int> &mp, unordered_map<char, int> &up){
     vector<pair<char, int>>cmp;
     
     for(auto itr:mp){
@@ -36,7 +36,7 @@ void sortMap(map<char, int> &mp){
     mp.empty();
     
     for(auto itr:cmp){
-        mp[itr.first] = itr.second;
+        up[itr.first] = itr.second;
     }
 }
 int main(int argc, const char * argv[]) {
@@ -54,13 +54,13 @@ int main(int argc, const char * argv[]) {
         inserted_order.push_back(c);
     }
     
-    sortMap(mp);
-    for(auto itr:mp){
+    sortMap(mp, up);
+    for(auto itr:up){
         
         cout<<itr.first<<":"<<itr.second<<endl;
     }
     
-    cout<<"Displaying elements in order"<<endl;
+    cout<<"Displaying elements by inserted order"<<endl;
     
     for(auto c:inserted_order){
         
