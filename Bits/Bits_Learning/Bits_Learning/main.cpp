@@ -8,6 +8,8 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <vector>
+
 
 using namespace std;
 int findrightmostsetbit(int n) {
@@ -22,8 +24,31 @@ void findkbitset(int num, int k) {
     else cout << "No"<<endl;
     
 }
+
+void countsetbits(int n){
+    vector<int>dp(n+1,0);
+    dp[0] = 0;
+    
+    for(int i = 0;i<=n;i++){
+        int temp = i;
+        cout<<"Right shift of i("<<temp<<")by 1: " << (temp>>1)<<endl;
+        cout<<"Temp: "<<temp<<endl;
+        cout<<"Builtinpopecount:"<<__builtin_popcount(i)<<endl;
+        dp[i] = dp[i>>1] + (i&1);
+        if(i==5) cout << "dp[5]" << dp[5]<<endl;
+    }
+    int counter = 0;
+    for(auto i:dp)
+    {
+        cout<<"Num:"<<counter<<"---"<<i<<endl;
+        counter++;
+        
+    }
+}
 int main(int argc, const char * argv[]) {
     // insert code here...
+    countsetbits(6);
+    
     int num = 4, k = 2;
     findkbitset(num, k);
 
