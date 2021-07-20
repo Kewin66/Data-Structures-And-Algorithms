@@ -56,10 +56,32 @@ void longestconsecutivesetbits(int n){
     cout<<"Number of consecutive ones: "<<counter<<endl;
     
 }
+void graytobinarytogray(int n)
+{
+    cout<<"Binary to gray"<<endl;
+    
+    int res = (n ^ (n>>1));
+    cout<<"Res:"<<res<<endl;
+    
+    cout<<"Gray to binary"<<endl;
+    
+    int temp = res;
+    while(res>0)
+    {
+        res>>=1;
+        temp^=res;
+    }
+    
+    cout<<"GrayToBinary is "<<temp<<endl;
+    
+}
 int main(int argc, const char * argv[]) {
     // insert code here...
+    graytobinarytogray(7);
+    
     longestconsecutivesetbits(222);
     countsetbits(6);
+    
     int num = 4, k = 2;
     findkbitset(num, k);
 
