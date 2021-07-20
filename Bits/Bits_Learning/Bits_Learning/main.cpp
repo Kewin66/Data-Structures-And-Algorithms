@@ -45,10 +45,21 @@ void countsetbits(int n){
         
     }
 }
+void longestconsecutivesetbits(int n){
+    int counter =0;
+    while(n>0)
+    {
+        n= n & n>>1;
+        counter++;
+        
+    }
+    cout<<"Number of consecutive ones: "<<counter<<endl;
+    
+}
 int main(int argc, const char * argv[]) {
     // insert code here...
+    longestconsecutivesetbits(222);
     countsetbits(6);
-    
     int num = 4, k = 2;
     findkbitset(num, k);
 
