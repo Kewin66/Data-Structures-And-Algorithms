@@ -15,14 +15,11 @@ using namespace std;
 int findrightmostsetbit(int n) {
     
     return log2(n & ~(n-1)) +1;
-    
-    
 }
+
 void findkbitset(int num, int k) {
-    
     if(num & (1<<k)) cout<< "Yes"<<endl;
     else cout << "No"<<endl;
-    
 }
 
 void countsetbits(int n){
@@ -30,19 +27,14 @@ void countsetbits(int n){
     dp[0] = 0;
     
     for(int i = 0;i<=n;i++){
-        int temp = i;
-        cout<<"Right shift of i("<<temp<<")by 1: " << (temp>>1)<<endl;
-        cout<<"Temp: "<<temp<<endl;
         cout<<"Builtinpopecount:"<<__builtin_popcount(i)<<endl;
         dp[i] = dp[i>>1] + (i&1);
-        if(i==5) cout << "dp[5]" << dp[5]<<endl;
     }
     int counter = 0;
     for(auto i:dp)
     {
         cout<<"Num:"<<counter<<"---"<<i<<endl;
         counter++;
-        
     }
 }
 void longestconsecutivesetbits(int n){
@@ -51,12 +43,11 @@ void longestconsecutivesetbits(int n){
     {
         n= n & n>>1;
         counter++;
-        
     }
     cout<<"Number of consecutive ones: "<<counter<<endl;
-    
 }
-void graytobinarytogray(int n)
+
+void graytobinarytogray(int n) // Binary to gray to binary
 {
     cout<<"Binary to gray"<<endl;
     
@@ -75,8 +66,21 @@ void graytobinarytogray(int n)
     cout<<"GrayToBinary is "<<temp<<endl;
     
 }
+void swapBits(unsigned int n)
+    {
+        // Your code here
+        int e = n & 0xAAAAAAAA;
+        int o = n & 0x55555555;
+        
+        e>>=1;
+        o<<=1;
+    int res = e|o;
+        cout << "After swapping even bits with odd bits:"<< res;
+    }
 int main(int argc, const char * argv[]) {
     // insert code here...
+    
+    swapBits(23);
     graytobinarytogray(7);
     
     longestconsecutivesetbits(222);
