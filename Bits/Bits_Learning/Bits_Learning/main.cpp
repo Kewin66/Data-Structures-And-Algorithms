@@ -10,6 +10,16 @@
 #include <cmath>
 #include <vector>
 
+/*
+ 
+ 1. Find rightmost set bit.
+ 2. Find binary to gray to binary conversion
+ 3. Swap odd bits with even.
+ 4. Find longest consecutive set bits.
+ 5. Count total bit set from 1 to N through DP approach.
+ 6. Find if kth bit is set.
+ 7. Find maximum AND pair in given array.
+ */
 
 using namespace std;
 int findrightmostsetbit(int n) {
@@ -27,7 +37,7 @@ void countsetbits(int n){
     dp[0] = 0;
     
     for(int i = 0;i<=n;i++){
-        cout<<"Builtinpopecount:"<<__builtin_popcount(i)<<endl;
+        //cout<<"Builtinpopcount:"<<__builtin_popcount(i)<<endl;
         dp[i] = dp[i>>1] + (i&1);
     }
     int counter = 0;
@@ -77,8 +87,44 @@ void swapBits(unsigned int n)
     int res = e|o;
         cout << "After swapping even bits with odd bits:"<< res;
     }
+
+int findpatterncount(int pattern, vector<int> &ip){
+    int count = 0;
+    cout<<"Pattern is: "<<pattern<<endl;
+    for(int i = 0;i<ip.size();i++)
+    {
+        //cout<<"Pattern And with ("<<ip[i]<<")input:"<< (pattern & ip[i])<<endl;
+        if((pattern & ip[i]) == pattern)
+            
+        {
+            cout<<"Number in AND pair input"<<ip[i]<<" \n";
+            count++;}
+    }
+    
+    return count;
+    
+}
+void findmaxANDpair(vector<int> &inp){
+    
+    int res = 0, count = 0;
+    for(int j = 31;j>=0;j--)
+    {
+        count = findpatterncount(res|(1<<j), inp);
+        if(count >=2)
+        {
+            res = res|(1<<j);
+        }
+    }
+    
+    cout<<"Maximum AND Pair is "<< res<<endl;
+    
+}
 int main(int argc, const char * argv[]) {
     // insert code here...
+    
+    vector<int>input = {3,7,2};
+    cout<<endl;
+    findmaxANDpair(input);
     
     swapBits(23);
     graytobinarytogray(7);
